@@ -206,6 +206,7 @@ int udp_rx(int argc, char **argv)
 
         /* And count it */
         pkt_rcv++;
+        printf("number of packets = %d \n", pkt_rcv);
     }
 
     /* Stop this thread from receiving anymore packets */
@@ -246,7 +247,8 @@ void print_rss(msg_t *msg)
 void print_prr(uint32_t pkt_rcv, uint32_t num_pkts)
 {
     /**** TO-DO ****/
-    float prr = pkt_rcv/num_pkts;
+
+    float prr = (float)pkt_rcv/(float)num_pkts;
      printf("%f\n", prr);
     /** 
      *You know the number of packets you were supposed to receive and the number
